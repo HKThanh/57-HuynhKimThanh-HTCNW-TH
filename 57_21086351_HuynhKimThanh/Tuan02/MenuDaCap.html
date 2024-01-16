@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu đa cấp</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .wrapper {
+            width: 1089px;
+            min-height: 400px;
+            border: 1px solid black;
+        }
+        
+        header {
+            width: 100%;
+            height: 150px;
+            position: relative;
+            border-bottom: 1px solid #000;
+        }
+        
+        .p1,
+        .p2 {
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .p1:hover,
+        .p2:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .p1 {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }
+        
+        .p2 {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+        }
+        
+        nav {
+            width: 100%;
+            height: 50px;
+            background-color: darkcyan;
+            border-bottom: 1px solid #000;
+        }
+        
+        .menu>li {
+            width: calc(100%/4);
+            float: left;
+            position: relative;
+            list-style: none;
+            text-align: center;
+        }
+        
+        .menu>li>.sub-menu {
+            position: absolute;
+            display: none;
+            width: 100%;
+        }
+        
+        .sub-menu>li {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .menu>li>a,
+        .sub-menu>li>a {
+            font-size: 20px;
+            color: #000;
+            line-height: 50px;
+            text-decoration: none;
+        }
+        
+        .menu>li:hover,
+        .menu>li:hover>a {
+            color: black;
+            cursor: pointer;
+            background-color: cyan;
+            text-decoration: underline;
+        }
+        
+        .menu>li:hover>.sub-menu>li {
+            position: relative;
+        }
+        
+        .sub-menu>li:hover {
+            background-color: wheat;
+        }
+        
+        .sub-menu>li:hover>a {
+            color: darkcyan;
+            text-decoration: underline;
+        }
+        
+        .menu>li:hover>.sub-menu {
+            display: block;
+            background-color: cyan;
+            cursor: pointer;
+        }
+        
+        .sub-menu>li>.sub-menu {
+            display: none;
+            position: absolute;
+            background-color: darkgray;
+            top: 0;
+            left: 100%;
+        }
+        
+        .sub-menu>li>.sub-menu>li {
+            width: 200px;
+        }
+        
+        .sub-menu>li:hover>.sub-menu {
+            display: block;
+        }
+        
+        .content {
+            min-height: 300px;
+            width: 1089px;
+            background: blanchedalmond;
+            border-bottom: 1px solid #000;
+        }
+        
+        aside {
+            width: 30%;
+            min-height: 300px;
+            background-color: darkseagreen;
+            float: left;
+        }
+        
+        section {
+            width: calc(40% - 2px);
+            min-height: 300px;
+            background-color: deeppink;
+            float: left;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+        
+        footer {
+            width: 100%;
+            height: 50px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="../Tuan02/img/tet.jfif" alt="" width="1089" height="150">
+            <p class="p1">Huỳnh Kim Thành</p>
+            <p class="p2">DHKTPM18B</p>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Item A</a></li>
+                <li><a href="#">Item B</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Item B1</a></li>
+                        <li><a href="#">Item B2</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Item B21</a></li>
+                                <li><a href="#">Item B22</a></li>
+                                <li><a href="#">Item B23</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Item B3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Item C</a></li>
+                <li><a href="#">Item D</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <aside>1</aside>
+            <section>2</section>
+            <aside>3</aside>
+        </div>
+        <footer>STT: 57 - Huỳnh Kim Thành - MSSV: 21086351</footer>
+    </div>
+</body>
+
+</html>
