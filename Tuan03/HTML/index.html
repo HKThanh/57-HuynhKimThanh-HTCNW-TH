@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Tùy Biến</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .wrapper {
+            height: 800px;
+            width: 1089px;
+            background-color: antiquewhite;
+        }
+        
+        header {
+            height: 150px;
+            position: relative;
+        }
+        
+        header h1 {
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            text-align: center;
+        }
+        
+        header h2 {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: blue;
+            text-shadow: chartreuse 10px 5px 0;
+        }
+        
+        nav {
+            position: relative;
+        }
+        
+        .menu li {
+            position: absolute;
+            height: 50px;
+            width: 150px;
+            background-color: cyan;
+            list-style: none;
+            text-indent: 10px;
+            border: 2px solid royalblue;
+            border-radius: 10px 0 10px 0;
+        }
+        
+        .menu li:nth-child(5) {
+            top: 20px;
+            right: 50px;
+            line-height: 1.4;
+        }
+        
+        .menu li:nth-child(4) {
+            top: 20px;
+            right: 210px;
+            line-height: 50px;
+        }
+        
+        .menu li:nth-child(3) {
+            top: 20px;
+            right: 370px;
+            line-height: 50px;
+        }
+        
+        .menu li:nth-child(2) {
+            top: 20px;
+            right: 530px;
+            line-height: 50px;
+        }
+        
+        .menu li:nth-child(1) {
+            top: 50px;
+            right: 720px;
+            line-height: 50px;
+            transform: rotate(-20deg);
+        }
+        
+        .menu li:hover {
+            background-color: salmon;
+        }
+        
+        li a {
+            font-weight: bold;
+            color: royalblue;
+        }
+        
+        li:hover a {
+            color: rgb(100, 231, 248);
+        }
+        
+        form #txtEmail {
+            height: 16px;
+            width: 100px;
+        }
+        
+        form #submit {
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="../IMG/tet.jfif" alt="tet holiday" height="150px" width="100%">
+            <h1>TRUONG DAI HOC CONG NGHIEP TP.HCM</h1>
+            <h2>KHOA CONG NGHE THONG TIN</h2>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">ITEM</a></li>
+                <li><a href="#">ITEM</a></li>
+                <li><a href="#">ITEM</a></li>
+                <li><a href="#">ITEM</a></li>
+                <li><a href="#">ITEM</a>
+                    <form action="post">
+                        <input type="email" name="txtEmail" id="txtEmail" placeholder="x@gmail.com">
+                        <input type="submit" value="GO" id="submit">
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
