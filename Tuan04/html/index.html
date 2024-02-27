@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuan 04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0 auto;
+            width: 500px;
+            border: 1px solid black;
+        }
+        
+        label {
+            margin-top: 20px;
+            display: inline-block;
+            width: 18%;
+            font-size: 16px;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            display: inline-block;
+            width: 79%;
+            height: 30px;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+        
+        button {
+            height: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>BIEU THUC CHINH QUY USER</h2>
+    <!-- Username -->
+    <label for="txtChuoi">UserName:</label>
+    <input type="text" name="txtChuoi" id="txtChuoi">
+    <button onclick="kiemTraUser();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt1" style="color: red;">(*)</label>
+    <br>
+
+    <!-- Password -->
+    <label for="txtPwd">Password:</label>
+    <input type="password" name="txtPwd" id="txtPwd">
+    <button onclick="kiemTraPassword();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt2" style="color: red;">(*)</label>
+    <br>
+
+    <!-- Email -->
+    <label for="txtEmail">Email:</label>
+    <input type="text" name="txtEmail" id="txtEmail">
+    <button onclick="kiemTraEmail();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt3" style="color: red;">(*)</label>
+    <br>
+
+    <!-- IPv4 -->
+    <label for="txtIPv4">IPv4:</label>
+    <input type="text" name="txtIPv4" id="txtIPv4">
+    <button onclick="kiemTraIPv4();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt4" style="color: red;">(*)</label>
+    <br>
+
+    <!-- Hex Value -->
+    <label for="txtHex">Hex:</label>
+    <input type="text" name="txtHex" id="txtHex">
+    <button onclick="kiemTraHex();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt5" style="color: red;">(*)</label>
+    <br>
+
+    <!-- Slug -->
+    <label for="txtSlug">Slug:</label>
+    <input type="text" name="txtSlug" id="txtSlug">
+    <button onclick="kiemTraSlug();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt6" style="color: red;">(*)</label>
+    <br>
+
+    <!-- URL -->
+    <label for="txtURL">URL:</label>
+    <input type="text" name="txtURL" id="txtURL">
+    <button onclick="kiemTraURL();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt7" style="color: red;">(*)</label>
+    <br>
+
+    <!-- HTML -->
+    <label for="txtHTML">HTML tag:</label>
+    <input type="text" name="txtHTML" id="txtHTML">
+    <button onclick="kiemTraHTML();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt8" style="color: red;">(*)</label>
+    <br>
+
+    <!-- Dates -->
+    <label for="txtDates">HTML tag:</label>
+    <input type="text" name="txtDates" id="txtDates">
+    <button onclick="kiemTraDates();">Kiem tra chuoi hop le</button>
+    <br>
+    <label id="kqkt9" style="color: red;">(*)</label>
+    <br>
+
+    <script src="../js/testRegex.js"></script>
+</body>
+
+</html>
