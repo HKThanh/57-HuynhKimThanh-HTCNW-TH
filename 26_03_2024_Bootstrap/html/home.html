@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding-left: 0;
+            padding-right: 0;
+            border: 1px solid rosybrown;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+                $("#btnOpen").click(function() {
+                    $("#myModal").modal();
+                })
+
+                let i = 2;
+
+                function kiemTraMa() {
+                    let mau = /[\d]{10}/;
+                    let chuoiKT = $("#txtMa").val();
+                    let kq = mau.test(chuoiKT)
+
+                    if (kq) {
+                        $("#tbMa").html("Nhap dung");
+                        return true;
+                    } else {
+                        $("#tbMa").html("Nhap sai");
+                        return false;
+                    }
+                }
+
+                $("#txtMa").blur(kiemTraMa);
+
+                function kiemTraTen() {
+                    let mau = /(^[A-Z]{1}[a-z]*){1}([\s A-Z]{1}[a-z]*)+$/;
+                    let chuoiKT = $("#txtHT").val();
+                    let kq = mau.test(chuoiKT)
+
+                    if (kq) {
+                        $("#tbHT").html("Nhap dung");
+                        return true;
+                    } else {
+                        $("#tbHT").html("Nhap sai");
+                        return false;
+                    }
+                }
+
+                $("#txtHT").blur(kiemTraTen);
+
+                function kiemTraQueQuan() {
+                    let mau = /(^[A-Z]{1}[a-z]*){1}([\s A-Z]{1}[a-z]*)+$/;
+                    let chuoiKT = $("#txtQQ").val();
+                    let kq = mau.test(chuoiKT)
+
+                    if (kq) {
+                        $("#tbQQ").html("Nhap dung");
+                        return true;
+                    } else {
+                        $("#tbQQ").html("Nhap sai");
+                        return false;
+                    }
+                }
+
+                $("#txtQQ").blur(kiemTraQueQuan);
+
+                function kiemTraNgaySinh() {
+                    let ns = new Date($("#dateNS").val());
+                    let now = new Date();
+
+                    let thoiGianChenhLech = (now.getTime() - ns.getTime()) / (365 * 24 * 60 * 60 * 1000);
+                    let soNamChenhLech = Math.round(thoiGianChenhLech)
+
+                    if (soNamChenhLech < 10) {
+                        $("#tbNS").html("Khong du tuoi");
+                        return false;
+                    } else {
+                        $("#tbNS").html("*");
+                        return true;
+                    }
+                }
+
+                $("#dateNS").change(kiemTraNgaySinh);
+
+                function layLop() {
+                    let lop = $("#slLop").val();
+
+                    alert(lop)
+                }
+
+                $("#slLop").change(layLop);
+
+                function capNhatBang() {
+                    let msv = $("#txtMa").val();
+                    let hoten = $("#txtHT").val();
+                    let ns = new Date($("#dateNS").val()).toLocaleDateString("vi");
+                    let que = $("#txtQQ").val();
+                    let lop = $("#slLop").val();
+
+                    var row = "<tr><td>" + (++i) + "</td><td>" + msv + "</td><td>" + hoten + "</td><td>" 
+                        + ns + "</td><td>" + que + "</td><td>" + lop + "</td>" + "</tr>";
+
+                    $("#myTable").append(row);
+                }
+
+                $("#btnCapNhat").click(function() {
+                    capNhatBang();
+                    $("#myModal").modal('hide');
+                });
+            }
+        )
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12">
+                <img src="../img/Logo.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="col-md-9 col-12">
+                <img src="../img/header.PNG" alt="" width="100%" height="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <nav class="navbar-nav nav-fill">
+                    <ul class="nav navbar-nav alert-dark navbar-expand">
+                        <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" id="btnOpen">SERVICE</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">HELP</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <table class="table table-bodered table-hover table-primary" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>MA SINH VIEN</th>
+                            <th>HO TEN</th>
+                            <th>NGAY SINH</th>
+                            <th>QUE QUAN</th>
+                            <th>LOP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>9876543211</td>
+                            <td>Tran Anh Khoa</td>
+                            <td>22/04/2000</td>
+                            <td>DONG THAP</td>
+                            <td>DHKTPM18CTT</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1234567890</td>
+                            <td>Duong Khanh</td>
+                            <td>12/05/2001</td>
+                            <td>CAN THO</td>
+                            <td>DHKTPM18BTT</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog" role="dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Cap nhat danh sach sinh vien</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                                <span aria-hidden="true">&times;</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-8 col-12">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="lblMa">Ma Sinh Vien</label>
+                                            <input type="text" id="txtMa" class="form-control" aria-describedby="txtMa" placeholder="Nhap ma sv">
+                                            <small class="form-text text-muted" id="tbMa">*</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lblHT">Ho Ten Sinh Vien</label>
+                                            <input type="text" id="txtHT" class="form-control" aria-describedby="txtHT" placeholder="Nhap ho ten">
+                                            <small class="form-text text-muted" id="tbHT">*</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lblNS">Ngay Sinh:</label>
+                                            <input type="date" class="form-control" name="" id="dateNS">
+                                            <small class="form-text text-muted" id="tbNS">*</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lblQQ">Que Quan</label>
+                                            <input type="text" id="txtQQ" class="form-control" aria-describedby="txtQQ" placeholder="Nhap que quan">
+                                            <small class="form-text text-muted" id="tbQQ">*</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lblLop">Lop:</label>
+                                            <select name="" id="slLop" class="form-control">
+                                                <option value="DHKTPM18ATT">DHKTPM18ATT</option>
+                                                <option value="DHKTPM18BTT">DHKTPM18BTT</option>
+                                                <option value="DHKTPM18CTT">DHKTPM18CTT</option>
+                                                <option value="DHKTPM18A">DHKTPM18A</option>
+                                                <option value="DHKTPM18B">DHKTPM18B</option>
+                                                <option value="DHKTPM18C">DHKTPM18C</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="btnCapNhat">Cap Nhat</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <h5>Huynh Kim Thanh - 21086351</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+</body>
+</html>
